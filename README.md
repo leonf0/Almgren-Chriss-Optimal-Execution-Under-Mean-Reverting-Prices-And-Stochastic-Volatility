@@ -1,0 +1,2 @@
+# Almgren-Chriss-Optimal-Execution-Under-Mean-Reverting-Prices-And-Stochastic-Volatility
+Evaluates TWAP, VWAP, and Almgren-Chriss strategies under mean-reverting Ornstein–Uhlenbeck dynamics with Heston-style stochastic volatility through Monte Carlo simulation. Uses an execution cost model that decomposes trade impact into 5 components (spread, temporary/permanent impact, implementation shortfall, adverse selection)
