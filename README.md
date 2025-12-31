@@ -192,7 +192,13 @@ Almgren–Chriss assumes:
 This project aims to evaluate how the strategy performs when these assumptions are violated (OU process, stochastic volatility, regime-dependent spreads). Empirically, Almgren–Chriss tends to **over-trade early** in mean-reverting markets, which realises excessive temporary impact.
 
 ## Simulation Results
+<p align="center">
+  <img src="assets/strategy_performance_comparison.png" alt="PPO Training Results" width="80%"/>
+</p>
 
+<p align="center">
+  <img src="assets/risk_adjusted_performance.png" alt="PPO Training Results" width="80%"/>
+</p>
 
 
 
