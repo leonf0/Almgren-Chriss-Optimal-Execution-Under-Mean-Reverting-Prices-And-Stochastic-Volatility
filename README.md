@@ -192,13 +192,29 @@ Almgren–Chriss assumes:
 This project aims to evaluate how the strategy performs when these assumptions are violated (OU process, stochastic volatility, regime-dependent spreads). Empirically, Almgren–Chriss tends to **over-trade early** in mean-reverting markets, which realises excessive temporary impact.
 
 ## Simulation Results
+
+### Normal Market Conditions
+
 <p align="center">
   <img src="assets/strategy_performance_comparison.png" alt="PPO Training Results" width="80%"/>
 </p>
+
+Almgren-Chriss achieves the lowest mean execution cost (174.8 bp), narrowly outperforming VWAP (177.0 bp) and TWAP (177.0 bp) under normal market conditions. The naive strategy (immediate execution) incurs 286.7 bp a 64% cost penalty relative to optimal strategies.
+
+Additionally achieves the lowest standard deviation (13) which is 32% lower than both VWAP and TWAP (19), and 97% less than the naive strategy (115). This is the opposite of what theory predicts, front-loaded execution should increase variance by concentrating exposure to early-period price uncertainty. The mean reversion dynamics may be the cause of this inversion, in the ABM regime spreading execution reduces variance by diversifying timing risk across uncorrelated price shocks. However, in the OU regime mean reversion creates negative autocorrelation in returns. 
+
+Almgren-Chriss's front-loading completes execution faster meaning it is less exposed to cumulative drift variance as it avoids late-execution tail risk while TWAP/VWAP remain exposed to adverse paths throughout the full 120 periods.
+
+The lower variance suggests urgency acts as a hedge against mean-reverting dynamics, even though the strategy wasn't designed for this regime.
 
 <p align="center">
   <img src="assets/risk_adjusted_performance.png" alt="PPO Training Results" width="80%"/>
 </p>
 
+The above results are summarised in these risk adjusted performance ratios that demonstrating how Almgren-Chriss outperforms VWAP and TWAP, and completely outperforms a Naive strategy.
+
+<p align="center">
+  <img src="assets/average_execution_trajectory.png" alt="PPO Training Results" width="80%"/>
+</p>
 
 
