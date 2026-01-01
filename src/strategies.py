@@ -1,8 +1,8 @@
 import numpy as np
 from typing import List
-from data_structures import MarketState, ExecutionResult
-from market_simulator import MarketSimulator
-from impact_models import CostModel
+from src.data_structures import MarketState, ExecutionResult
+from src.market_simulator import MarketSimulator
+from src.impact_models import CostModel
 
 class BaseStrategy:
     def __init__(self, name: str):
