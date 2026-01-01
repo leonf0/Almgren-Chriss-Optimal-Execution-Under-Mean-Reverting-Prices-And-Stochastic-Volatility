@@ -217,4 +217,32 @@ The above results are summarised in these risk adjusted performance ratios that 
   <img src="assets/average_execution_trajectory.png" alt="PPO Training Results" width="80%"/>
 </p>
 
+The Almgren-Chriss strategy front-loads execution aggressively, completing approximately 50% of the order within the first third of the simulated time compared to TWAP linear 33% completion. 
+
+VWAP and TWAP are very similar in this simulation. This occurs becauset he U-shaped volume forecast is symmetric, averaging to near-uniform execution over 120 periods, and volume peaks at open/close are modest (approximately 2× mid-day levels).
+
+Naive execution (100% at t=0) is shown as a flat line.
+
+### Flash Crash Stress Test
+
+<p align="center">
+  <img src="assets/flash_crash_comparison.png" alt="PPO Training Results" width="80%"/>
+</p>
+
+Naive execution experiences catastrophic failure (4822% cost increase), rising from 287 bp to approximately 14,200 bp. Immediate execution during the crash window triggers both extreme temporary impact from trading into thin liquidity and massive adverse selection as prices continue moving against the trade during the crash
+
+TWAP and VWAP show modest deterioration (19% and 23% respectively), benefiting from temporal diversification. Most execution occurs after the 10-period crash window, which limits exposure.
+
+Almgren-Chriss exhibits 72% cost increase which is worse than TWAP/VWAP but 67× better than naive. This represents the cost of front-loading urgency, AC's early concentration means around 30-40% of execution occurs during the crash, while TWAP/VWAP only execute around 8-10% in that window.
+
+### Liquidity Drought Stress Test
+<p align="center">
+  <img src="assets/liquidity_drought_comparison.png" alt="PPO Training Results" width="80%"/>
+</p>
+
+Naive execution again shows extreme fragility (704% cost increase), though less catastrophic than during the flash crash  as the 30-period drought is less severe but longer lasting than the flash crash.
+
+TWAP (14%), VWAP (15%), and Almgren-Chriss (22%) all show modest degradation, with AC again suffering the largest increase as a result of front-loading. The relative performance spread is narrower than in flash crash because:
+
+Almgren-Chriss's advantage over naive execution remains (22% vs 704%), but the temporal diversification (TWAP/VWAP) outperforms urgency-based front-loading in prolonged adverse regimes. The optimal strategy may be conditional urgency: high $\kappa$ in normal markets, low $\kappa$ when regime detection flags illiquidity.
 
