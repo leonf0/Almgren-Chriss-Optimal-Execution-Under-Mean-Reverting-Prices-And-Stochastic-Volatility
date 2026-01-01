@@ -212,7 +212,7 @@ The lower variance suggests urgency acts as a hedge against mean-reverting dynam
   <img src="assets/risk_adjusted_performance.png" alt="PPO Training Results" width="80%"/>
 </p>
 
-The above results are summarised in these risk adjusted performance ratios that demonstrating how Almgren-Chriss outperforms VWAP and TWAP, and completely outperforms a Naive strategy.
+The prior results are summarised in these risk adjusted performance ratios that demonstrating how Almgren-Chriss outperforms VWAP and TWAP, and completely outperforms a Naive strategy.
 
 <p align="center">
   <img src="assets/average_execution_trajectory.png" alt="PPO Training Results" width="80%"/>
