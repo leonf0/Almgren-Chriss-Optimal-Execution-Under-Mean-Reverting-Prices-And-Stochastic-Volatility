@@ -1,6 +1,6 @@
-from config import config
-from experiments import run_experiment_1_monte_carlo_validation, run_experiment_2_stress_scenarios, run_experiment_3_robustness_analysis
-from analyzer import MonteCarloAnalyzer
+from src.config import config
+from src.experiments import run_experiment_1_monte_carlo_validation, run_experiment_2_stress_scenarios, run_experiment_3_robustness_analysis
+from src.analyser import MonteCarloAnalyzer
 
 def run_all_monte_carlo_experiments():
     
