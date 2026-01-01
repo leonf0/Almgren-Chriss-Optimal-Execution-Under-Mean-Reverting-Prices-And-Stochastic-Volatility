@@ -1,6 +1,6 @@
 import numpy as np
 from typing import List
-from data_structures import MarketState, CostBreakdown
+from src.data_structures import MarketState, CostBreakdown
 
 class ImpactModel:
     def __init__(self, temp_gamma=0.1, temp_alpha=0.65, perm_eta=0.03, perm_beta=0.42,
