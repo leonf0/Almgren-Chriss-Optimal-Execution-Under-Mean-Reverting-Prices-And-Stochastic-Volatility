@@ -1,10 +1,10 @@
 import numpy as np
 from typing import List, Dict, Optional
-from config import MonteCarloConfig, base_seed
-from data_structures import MonteCarloResults, ExecutionResult
-from market_simulator import MarketSimulator
-from impact_models import ImpactModel, CostModel
-from strategies import BaseStrategy
+from src.config import MonteCarloConfig, base_seed
+from src.data_structures import MonteCarloResults, ExecutionResult
+from src.market_simulator import MarketSimulator
+from src.impact_models import ImpactModel, CostModel
+from src.strategies import BaseStrategy
 
 class MonteCarloSimulator:
     
