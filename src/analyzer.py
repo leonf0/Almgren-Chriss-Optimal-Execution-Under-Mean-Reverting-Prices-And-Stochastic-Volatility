@@ -4,9 +4,6 @@ import matplotlib.pyplot as plt
 from typing import Dict
 from src.data_structures import MonteCarloResults
 
-plt.style.use('seaborn-v0_8-darkgrid')
-sns.set_palette("husl")
-
 class MonteCarloAnalyzer:
     @staticmethod
     def create_summary_table(mc_results: Dict[str, MonteCarloResults]) -> pd.DataFrame:
