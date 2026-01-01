@@ -1,4 +1,4 @@
-# Execution Cost Model under Realistic Market Impact
+# Almgren-Chriss Optimal Execution Under Mean-Reverting Prices and Stochastic Volatility
 
 ## Project Overview
 
