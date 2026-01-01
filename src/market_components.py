@@ -1,7 +1,7 @@
 import numpy as np
 from collections import deque
 from scipy import stats
-from data_structures import Regime
+from src.data_structures import Regime
 
 class HestonVolatility:
     
