@@ -166,8 +166,8 @@ where $V_t$ is expected volume at time t.
 
 #### Optimisation Problem
 
-Almgren–Chriss (2000) solves:
-$$\min \; \mathbb{E}[C] + \lambda \, \mathrm{Var}[C]$$
+Almgren–Chriss solves:
+$$\min \; \mathbb{E}[C] + \lambda \mathrm{Var}[C]$$
 
 
 subject to $\sum_t q_t = Q$, where:
