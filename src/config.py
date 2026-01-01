@@ -1,9 +1,6 @@
 import numpy as np
 import pandas as pd
 
-plt.style.use('seaborn-v0_8-darkgrid')
-sns.set_palette("husl")
-
 base_seed = 42
 
 class MonteCarloConfig:
