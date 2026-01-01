@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from typing import Dict
-from data_structures import MonteCarloResults
+from src.data_structures import MonteCarloResults
 
 class MonteCarloAnalyzer:
     @staticmethod
