@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from src.config import config
 from src.monte_carlo import MonteCarloSimulator
 from src.strategies import NaiveStrategy, TWAPStrategy, VWAPStrategy, AlmgrenChrissStrategy
-from src.analyser import MonteCarloAnalyzer
+from src.analyzer import MonteCarloAnalyzer
 
 def run_experiment_1_monte_carlo_validation():
     print("Experiment 1: Validation")
