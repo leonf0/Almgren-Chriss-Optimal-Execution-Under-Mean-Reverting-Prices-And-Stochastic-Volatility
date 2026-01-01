@@ -1,6 +1,6 @@
 import numpy as np
-from data_structures import MarketState
-from market_components import HestonVolatility, RegimeDetector
+from src.data_structures import MarketState
+from src.market_components import HestonVolatility, RegimeDetector
 
 class MarketSimulator:   
     def __init__(self, S0=100.0, base_vol=0.02, base_spread=0.02, base_depth=10000, 
