@@ -2,6 +2,9 @@ from src.config import config
 from src.experiments import run_experiment_1_monte_carlo_validation, run_experiment_2_stress_scenarios, run_experiment_3_robustness_analysis
 from src.analyzer import MonteCarloAnalyzer
 
+plt.style.use('seaborn-v0_8-darkgrid')
+sns.set_palette("husl")
+
 def run_all_monte_carlo_experiments():
     
     print(f"  Simulations per experiment: {config.n_simulations}")
