@@ -246,3 +246,16 @@ TWAP (14%), VWAP (15%), and Almgren-Chriss (22%) all show modest degradation, wi
 
 Almgren-Chriss's advantage over naive execution remains (22% vs 704%), but the temporal diversification (TWAP/VWAP) outperforms urgency-based front-loading in prolonged adverse regimes. The optimal strategy may be conditional urgency: high $\kappa$ in normal markets, low $\kappa$ when regime detection flags illiquidity.
 
+### Order Size Stress Test
+<p align="center">
+  <img src="assets/cost_vs_order_size_robustness.png" alt="PPO Training Results" width="80%"/>
+</p>
+
+All three strategies exhibit near-linear cost scaling with order size, increasing from approximately 133 bp at 50,000 shares (5% ADV) to approximately 230 bp at 200,000 shares (20% ADV). 
+
+Almgren-Chriss maintains consistent marginal advantage across all sizes (approximately 1-3 bp below TWAP/VWAP), but the relative edge shrinks from 2.3% at smaller sizes to 0.3% at large sizes. This suggests the strategy is most effective for institutional-scale but not block-sized orders (roughly 5-10% ADV).
+
+## Summary
+
+Under baseline conditions, Almgren–Chriss achieves the lowest mean cost (174.8 bp) and, unexpectedly, 32% lower standard deviation than TWAP/VWAP (13 bp vs 19 bp). This variance reduction contradicts the classical theory that front-loaded execution should increase risk by concentrating exposure. However, somewhat suprisingly mean reversion inverts this variance profile, front-loading reduces risk in OU markets, the opposite of the ABM predictions. As a result fixed urgency creates regime-dependent fragility, it is optimal in normal markets, but can be costly in stress scenarios.
+
