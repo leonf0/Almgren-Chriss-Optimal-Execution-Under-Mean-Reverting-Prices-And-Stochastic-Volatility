@@ -258,5 +258,5 @@ Almgren-Chriss maintains consistent marginal advantage across all sizes (approxi
 
 ## Summary
 
-Under baseline conditions, Almgren–Chriss achieves the lowest mean cost (174.8 bp) and, unexpectedly, 32% lower standard deviation than TWAP/VWAP (13 bp vs 19 bp). This variance reduction contradicts the classical theory that front-loaded execution should increase risk by concentrating exposure. However, somewhat suprisingly mean reversion inverts this variance profile, front-loading reduces risk in OU markets, the opposite of the ABM predictions. As a result fixed urgency creates regime-dependent fragility, it is optimal in normal markets, but can be costly in stress scenarios.
+Under baseline conditions, Almgren–Chriss achieves the lowest mean cost (174.8 bp) and, unexpectedly, 32% lower standard deviation than TWAP/VWAP (13 bp vs 19 bp). This variance reduction contradicts the classical theory that front-loaded execution should increase risk by concentrating exposure. However, somewhat suprisingly mean reversion inverts this variance profile, carefully executed front-loading can sometimes reduce risk in OU markets, the opposite of the ABM predictions. As a result fixed urgency creates regime-dependent fragility, it is optimal in normal markets, but can be costly in stress scenarios.
 
