@@ -6,8 +6,7 @@ from src.market_simulator import MarketSimulator
 from src.impact_models import ImpactModel, CostModel
 from src.strategies import BaseStrategy
 
-class MonteCarloSimulator:
-    
+class MonteCarloSimulator: 
     def __init__(self, config: MonteCarloConfig):
         self.config = config
     
