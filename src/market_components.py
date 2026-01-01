@@ -4,7 +4,6 @@ from scipy import stats
 from src.data_structures import Regime
 
 class HestonVolatility:
-    
     def __init__(self, v0=0.0004, kappa=3.0, theta=0.0004, sigma_v=0.3, rho=-0.7):
         self.v = v0
         self.kappa = kappa
