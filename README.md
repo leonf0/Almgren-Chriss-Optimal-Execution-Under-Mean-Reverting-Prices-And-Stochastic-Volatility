@@ -176,11 +176,11 @@ subject to $\sum_t q_t = Q$, where:
 - λ is risk aversion
 
 The closed-form solution is:
-$$X_t = X_0 \, \frac{\sinh\!\bigl(\kappa (T - t)\bigr)}{\sinh(\kappa T)}$$
+$$X_t = X_0 \frac{\sinh\!\bigl(\kappa (T - t)\bigr)}{\sinh(\kappa T)}$$
 
 where $X_t$ is remaining shares at time t and $\kappa = \sqrt{\frac{\lambda \sigma^2}{\eta}}$ is urgency.
 
-**Implementation**: Rather than calibrating λ (which requires specifying units and risk aversion), this project uses **urgency** $\kappaT$ directly as a dimensionless parameter. Higher urgency leads to more front-loaded execution and lower opportunity cost at the expense of higher temporary impact.
+**Implementation**: Rather than calibrating λ (which requires specifying units and risk aversion), this project uses **urgency**, $\kappa T$, directly as a dimensionless parameter. Higher urgency leads to more front-loaded execution and lower opportunity cost at the expense of higher temporary impact.
 
 #### Key Assumptions and Limitations
 
