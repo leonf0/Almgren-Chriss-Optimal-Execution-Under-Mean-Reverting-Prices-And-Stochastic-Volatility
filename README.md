@@ -75,7 +75,7 @@ where $v_t$ is instantaneous variance, $θ_v$ is long-run variance, and $\kappa_
 
 $$\text{spread}_t = \text{base spread} \cdot \left( 1 + 1.5 \cdot \frac{\sigma_t}{\bar{\sigma}} \right) \cdot \left( 1 + 0.5 \cdot \frac{q_t}{V_t} \right)$$
 
-where $\bar{\sigma}$ is volatility per minute, $q_t$ is trade size and $V_t$ is expected volume.
+where $q_t$ is trade size and $V_t$ is expected volume.
 
 - **Depth depletion**: Limit order book depth decreases with participation:
 
@@ -117,7 +117,8 @@ This formulation assumes **power-law impact** in participation rate and **expone
 #### 3. Permanent Market Impact
 
 Lasting price shift from information revelation (Kyle model intuition):
-$$C_{\text{perm}} = \eta \left( \frac{Q}{\mathrm{ADV}} \right)^{\beta} S_0 \, Q $$
+
+$$C_{\text{perm}} = \eta \left( \frac{Q}{\mathrm{ADV}} \right)^{\beta} S_0 \, Q$$
 where:
 - $Q = \sum_t q_t$ is total order size
 - $\eta$ is permanent impact scaling
