@@ -45,7 +45,7 @@ Execution cost modelling is vital in institutional trading systems where large o
 
 The mid-price $S_t$ evolves according to an **Ornstein–Uhlenbeck (OU) process**:
 
-$$dS_t = \kappa (\theta - S_t)\, dt + \sigma_t S_t \, dW_t$$
+$$dS_t = \kappa (\theta - S_t)\, dt + \sigma_t S_t dW_t$$
 
 where:
 - $\kappa$ is the mean-reversion speed (set to 0.5 per minute)
@@ -53,13 +53,13 @@ where:
 - $\sigma_t$ is time-varying volatility (stochastic)
 - $W_t$ is a standard Brownian motion
 
-This provides a contrast to the ABM assumption $dS_t = \mu \, dt + \sigma \, dW_t$ used in Almgren–Chriss, introducing **mean reversion** that penalises strategies assuming persistent drift.
+This provides a contrast to the ABM assumption $dS_t = \mu dt + \sigma dW_t$ used in Almgren–Chriss, introducing **mean reversion** that penalises strategies assuming persistent drift.
 
 #### Stochastic Volatility
 
 Volatility follows a **Heston-style square-root process**:
 
-$$dv_t = \kappa_v (\theta_v - v_t)\, dt + \sigma_v \sqrt{v_t}\, dW_v$$
+$$dv_t = \kappa_v (\theta_v - v_t) dt + \sigma_v \sqrt{v_t} dW_v$$
 
 where $v_t$ is instantaneous variance, $θ_v$ is long-run variance, and $\kappa_v$ controls mean reversion. This captures **volatility clustering** and regime transitions, allowing the simulator to model periods of abnormal turbulence (e.g., flash crashes) without exogenous shocks.
 
@@ -97,7 +97,7 @@ Total execution cost is decomposed into five components:
 
 The cost of crossing the bid-ask spread:
 
-$$C_{\text{spread}} = \sum_t \frac{1}{2}\, s_t \, \lvert q_t \rvert$$
+$$C_{\text{spread}} = \sum_t \frac{1}{2} s_t \lvert q_t \rvert$$
 
 where $s_t$ is the spread and $q_t$ is shares traded at time t. This is unavoidable in limit order markets.
 
@@ -116,7 +116,7 @@ This formulation assumes **power-law impact** in participation rate and **expone
 
 #### 3. Permanent Market Impact
 
-Lasting price shift from information revelation (Kyle model intuition):
+Lasting price shift from information revelation:
 
 $$C_{\text{perm}} = \eta \left( \frac{Q}{\mathrm{ADV}} \right)^{\beta} S_0 \, Q$$
 where:
@@ -129,7 +129,7 @@ Permanent impact persists beyond execution and represents the price discovery co
 #### 4. Implementation Shortfall (Opportunity Cost)
 
 Measures slippage from arrival price to VWAP:
-$$C_{\text{opp}} = \max \bigl( 0,\; (\mathrm{VWAP} - S_0)\, Q \bigr)$$
+$$C_{\text{opp}} = \max \bigl( 0, (\mathrm{VWAP} - S_0) Q \bigr)$$
 
 where $S_0$ is the arrival price. This captures **opportunity cost** from delayed execution when price moves adversely.
 
@@ -176,7 +176,7 @@ subject to $\sum_t q_t = Q$, where:
 - λ is risk aversion
 
 The closed-form solution is:
-$$X_t = X_0 \frac{\sinh\!\bigl(\kappa (T - t)\bigr)}{\sinh(\kappa T)}$$
+$$X_t = X_0 \frac{\sinh\bigl(\kappa (T - t)\bigr)}{\sinh(\kappa T)}$$
 
 where $X_t$ is remaining shares at time t and $\kappa = \sqrt{\frac{\lambda \sigma^2}{\eta}}$ is urgency.
 
