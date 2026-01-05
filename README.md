@@ -109,7 +109,7 @@ $$C_{\text{temp}} = \sum_t\gamma \left( \frac{|q_t|}{V_t} \right)^{\alpha} \sigm
 
 where:
 - $\gamma$ is a dimensionless scaling parameter
-- $\alpha \in (0, 1)$ controls concavity (typically 0.5–0.6 from empirical studies)
+- $\alpha \in (0, 1)$ controls concavity (typically 0.5–0.7 from empirical studies)
 - $\lambda = \frac{\ln(2)}{t_{1/2}}$ is the decay rate (half-life $t_{1/2}$ = 10 periods)
 
 This formulation assumes **power-law impact** in participation rate and **exponential decay** rather than instant reversal, aligning with empirical microstructure findings.
